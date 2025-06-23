@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rainfall Prediction</title>
+    
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <h2>Rainfall Prediction</h2>
+    <form action="/predict" method="post">
+        Pressure:     <input type="text" name="pressure"><br>
+        Maxtemp:      <input type="text" name="maxtemp"><br>
+        Temparature:  <input type="text" name="temparature"><br>
+        Mintemp:      <input type="text" name="mintemp"><br>
+        Dewpoint:     <input type="text" name="dewpoint"><br>
+        Humidity:     <input type="text" name="humidity"><br>
+        Cloud:        <input type="text" name="cloud"><br>
+        Sunshine:     <input type="text" name="sunshine"><br>
+        Winddirection:<input type="text" name="winddirection"><br>
+        Wind Speed:   <input type="text" name="windspeed"><br>
+                      <input type="submit" value="Predict">
+    </form>
+    {% if prediction %}
+        <h3>{{ prediction }}</h3>
+    {% endif %}
+</body>
+</html>
